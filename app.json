@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/cay/cayKinds/cayKinds",
+    "pages/cay/cayDetils/cayDetils",
     "pages/index/index",
     "pages/login/login",
-    
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/cay/caylist/caylist"
   ],
   "window": {
     "backgroundTextStyle": "light",

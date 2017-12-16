@@ -1,0 +1,14 @@
+/* pages/cay/cayDetils/cayDetils.wxss */
+page{
+  font-size: 32rpx;
+}
+.cay_detils{background: #fff;box-shadow: 0 -1rpx 8rpx 4rpx #EBEBEB;}
+.cay_detils_list{
+  height: 86rpx;
+  padding-left: 30rpx;
+  border-bottom: 1px solid #F9F9F9;
+}
+.cay_icon{
+  width: 74rpx;
+  text-align: center;
+}

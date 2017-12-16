@@ -68,3 +68,6 @@ button::after{
   bottom: 36rpx;
   font-size: 12px;
 }
+.back_fff{
+  background: #fff;
+}

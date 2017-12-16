@@ -1,0 +1,2 @@
+<!--pages/cay/caylist/caylist.wxml-->
+<button class='btn' bindtap='addCay'>添加车辆信息</button>

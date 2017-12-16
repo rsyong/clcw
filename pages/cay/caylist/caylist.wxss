@@ -1,0 +1,10 @@
+/* pages/cay/caylist/caylist.wxss */
+button::after{
+  content: " ";
+}
+.btn{
+  background-color: #fff;
+  color: #A9A9A9;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}

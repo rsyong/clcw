@@ -1,0 +1,100 @@
+/* pages/cay/cayKinds/cayKinds.wxss */
+page{
+  background-color: #eee;
+}
+.scroll{
+  height: 1204rpx;
+}
+.pa-20{
+  padding: 0 10px;
+}
+.title{
+  line-height: 40px;
+  font-size: 15px;
+  border-bottom: 1px solid #E7E7E7;
+}
+.hot{
+  padding: 0 30px 15px 30px;
+}
+.hot_list{
+  width: 20%;
+  margin-top: 30px;
+}
+.hot_list image{
+  max-width: 50%;
+  max-height: 30px;
+}
+.text{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.items{
+  text-indent: 15px;
+  line-height: 30px;
+  color: #646464;
+  font-size: 15px;
+}
+.cays{
+  height: 50px;
+  padding-left: 15px;
+  border-bottom: 1px solid #F2F2F2;
+}
+.cays .imgs{
+  width: 50px;
+}
+.cays .imgs image{
+  max-width: 55%;
+  max-height: 27px;
+  vertical-align: text-bottom;
+}
+.cays_text{
+  font-size: 15px;
+}
+.hot_item{
+  position: fixed;
+  width: 32rpx;
+  line-height: 36rpx;
+  right: 10rpx;
+  top: 130rpx;
+  color: #2A6ACB;
+  font-size: 24rpx;
+  text-align: center;
+  z-index: 10;
+}
+.model{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0,0, 0.5);
+  z-index: 11;
+}
+.list_show{
+  position: fixed;
+  width: 604rpx;
+  background: #fff;
+  height: 100%;
+  z-index: 12;
+  top: 0;
+  right: 0;
+}
+.right_title{
+ line-height: 90rpx;
+ padding: 0 30rpx;
+ background: #eee;
+ font-size: 34rpx;
+}
+.right_list{
+  height: 178rpx;
+  padding: 0 30rpx;
+  border-bottom: 1px solid #eee;
+}
+.right_list image{
+  width: 130rpx;
+  height: 100rpx;
+}
+.right_text{
+  margin-left: 32rpx;
+  font-size: 24rpx;
+}

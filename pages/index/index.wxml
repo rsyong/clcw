@@ -1,14 +1,14 @@
 <view class="container">
   <view class='flex user_img align-items-cnter mt-25'>
-    <image src='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3355220418,3504799265&fm=27&gp=0.jpg'></image>
+    <image src='{{user_img}}'></image>
   </view>
-  <view class='flex mt-25 just-conten-center'>专业洗车服务</view>
+  <view class='flex mt-25 just-conten-center'>专业服务专业洗车</view>
   <view class='fuwu'>
     <view class='fuwu_list flex align-items-cnter'>
       <view class='fuwu_list_logo text-center color-hui'>1</view>
-      <picker mode = "multiSelector" range="{{array}}" value="{{index}}" bindchange="bindPickerChange" class='flex1 text-center color-hui'>
+      <picker mode = "multiSelector" range="{{multiArray}}" value="{{multiIndex}}" bindchange="bindMultiPickerChange" class='flex1 text-center color-hui'>
         <view class="picker">
-          {{array[index]}}
+          {{multiArray[0][multiIndex[0]]}} - {{multiArray[1][multiIndex[1]]}}
         </view>
       </picker>
     </view>
@@ -18,7 +18,7 @@
     </view>
     <view class='fuwu_list flex align-items-cnter'>
       <view class='fuwu_list_logo text-center color-hui'>3</view>
-      <view class='flex1'><input type='text' placeholder='请选择车辆' value='{{cay}}' bindinput='bindKeyInput'></input></view>
+      <view class='flex1 color-hui' bindtap='choos'>请选择车辆</view>
     </view>
   </view>
   <button class='btn' bindtap='upData' style='background:{{back}}'>提交订单</button>
