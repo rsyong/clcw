@@ -1,0 +1,70 @@
+/**app.wxss**/
+page{
+  background-color: #FAFAFA;
+  color: #333;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+} 
+.flex{
+  display: flex;
+  flex: 1;
+}
+.flex1{
+  flex: 1;
+}
+.flex-diction{
+  flex-direction: column;
+}
+.align-items-cnter{
+  align-items: center;
+}
+.just-conten-beteen{
+  justify-content: space-between;
+}
+.just-conten-around{
+  justify-content: space-around;
+}
+.just-conten-center{
+  justify-content: center;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.mt-25{
+  margin-top: 30rpx;
+}
+.text-center{
+  text-align: center;
+}
+.color-hui{
+  color: #CDCDCD;
+}
+button::after{
+  content: none;
+}
+.mt-140{
+  margin-top: 140rpx;
+}
+.mt-50{
+  margin-top: 50rpx;
+}
+.btn{
+  margin-top: 50rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 96%;
+  color: #fff;
+  border: none;
+  background: #E5E5E5;
+}
+.kefu{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 36rpx;
+  font-size: 12px;
+}

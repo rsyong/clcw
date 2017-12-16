@@ -1,0 +1,31 @@
+<view class="container">
+  <view class='flex user_img align-items-cnter mt-25'>
+    <image src='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3355220418,3504799265&fm=27&gp=0.jpg'></image>
+  </view>
+  <view class='flex mt-25 just-conten-center'>专业洗车服务</view>
+  <view class='fuwu'>
+    <view class='fuwu_list flex align-items-cnter'>
+      <view class='fuwu_list_logo text-center color-hui'>1</view>
+      <picker mode = "multiSelector" range="{{array}}" value="{{index}}" bindchange="bindPickerChange" class='flex1 text-center color-hui'>
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class='fuwu_list flex align-items-cnter'>
+      <view class='fuwu_list_logo text-center color-hui'>2</view>
+      <view class='flex1'><input type='text' placeholder='定位失败' value='{{adree}}'></input></view>
+    </view>
+    <view class='fuwu_list flex align-items-cnter'>
+      <view class='fuwu_list_logo text-center color-hui'>3</view>
+      <view class='flex1'><input type='text' placeholder='请选择车辆' value='{{cay}}' bindinput='bindKeyInput'></input></view>
+    </view>
+  </view>
+  <button class='btn' bindtap='upData' style='background:{{back}}'>提交订单</button>
+  <view class='flex just-conten-center mt-25'>
+    <navigator class='color-hui'>优惠活动介绍</navigator>
+  </view>
+  <view class='kefu'>
+    <navigator class='color-hui'>联系客服</navigator>
+  </view>
+</view>

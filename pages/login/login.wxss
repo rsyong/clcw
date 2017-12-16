@@ -1,0 +1,23 @@
+/* pages/login/login.wxss */
+.login{
+  background: #fff;
+  box-shadow: 0 -1rpx 8rpx 4rpx #EBEBEB;
+}
+.login_list{
+  height: 88rpx;
+  border-bottom: 1px solid #F9F9F9;
+}
+.login_icon{
+  width: 66rpx;
+  text-align: center;
+}
+.code{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  background: #17A1E6;
+  color: #fff;
+  padding: 0 18rpx;
+  position: relativel;
+  border-radius: 2px;
+}
