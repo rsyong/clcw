@@ -1,11 +1,15 @@
 {
   "pages": [
-    "pages/cay/cayKinds/cayKinds",
-    "pages/cay/cayDetils/cayDetils",
-    "pages/index/index",
     "pages/login/login",
+    "pages/index/index",
+    "pages/index/dingdanDetile/dingdanDetile",
+    "pages/index/mydingdan/mydingdan",
+    "pages/cay/caylist/caylist",
+    "pages/cay/cayDetils/cayDetils",
+    "pages/cay/cayKinds/cayKinds",
+    
     "pages/logs/logs",
-    "pages/cay/caylist/caylist"
+    "pages/index/dingdan/dingdan"
   ],
   "window": {
     "backgroundTextStyle": "light",

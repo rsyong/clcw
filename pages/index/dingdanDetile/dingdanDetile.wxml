@@ -1,0 +1,67 @@
+<!--pages/index/dingdanDetile/dingdanDetile.wxml-->
+<view class='content'>
+  <view class='dingdan'>
+    <view class='flex top just-conten-beteen'>
+      <view>蓝风</view>
+      <view>电话</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>全车深度精洗</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>厦门市湖里区</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>闽A131345 日产 奇俊 黑色</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>11-23 16:00</view>
+    </view>
+  </view>
+  <view class='flex zhifu align-items-cnter just-conten-around'>
+    <view class='qu'>取消订单</view>
+    <view class='now'>马上支付</view>
+  </view>
+  <view class='flex bott'>
+    <view class='xian'></view>
+    <view class='flex1'>
+      <view class='flex1 dd'>
+       <view class='flex'>
+          <icon class='icons' type="success" size="10" color='#17A1E6'/>
+          <view class='qian'>提交订单</view>
+          <view class='flex1'>2017564</view>
+        </view>
+      </view>
+      <view class='flex1 dd'>
+       <view class='flex'>
+          <icon class='icons' type="success" size="10" color='#CDCDCD'/>
+          <view class='qian'>派送服务</view>
+          <view class='flex1'>2017564</view>
+        </view>
+        <view class='fuwu'>服务时间：2017</view>
+      </view>
+      <view class='flex1 dd'>
+        <view class='flex'>
+          <icon class='icons' type="success" size="10" color='#CDCDCD'/>
+          <view class='qian'>开始服务</view>
+          <view class='flex1'>2017564</view>
+          <view class='xi'>洗前照片</view>
+        </view>
+        <view class='fuwu'>服务时间：2017</view>
+      </view>
+      <view class='flex1 dd'>
+        <view class='flex'>
+          <icon class='icons' type="success" size="10" color='#CDCDCD'/>
+          <view class='qian'>完成服务</view>
+          <view class='flex1'>2017564</view>
+          <view class='xi'>洗后照片</view>
+        </view>
+        <view class='fuwu'>服务时间：2017</view>
+      </view>
+    </view>
+  </view>
+</view>

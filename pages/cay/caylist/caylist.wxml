@@ -1,2 +1,6 @@
 <!--pages/cay/caylist/caylist.wxml-->
+<view class='cay_list'>
+  <view>闽D8979G 白色</view>
+  <view>日产 奇骏</view>
+</view>
 <button class='btn' bindtap='addCay'>添加车辆信息</button>

@@ -1,7 +1,4 @@
 /* pages/cay/cayDetils/cayDetils.wxss */
-page{
-  font-size: 32rpx;
-}
 .cay_detils{background: #fff;box-shadow: 0 -1rpx 8rpx 4rpx #EBEBEB;}
 .cay_detils_list{
   height: 86rpx;
@@ -11,4 +8,56 @@ page{
 .cay_icon{
   width: 74rpx;
   text-align: center;
+}
+.model{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #F5F5F5;
+  z-index: 10;
+  font-size: 30rpx;
+}
+.model_title{
+  line-height: 122rpx;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+}
+.suer{
+  position: absolute;
+  line-height: 122rpx;
+  color: #6FC2EE;
+  right: 0;
+  padding: 0 24rpx;
+  top: 0;
+  font-weight: bold;
+}
+.model_bar{
+  padding-left: 24rpx;
+  padding-bottom: 24rpx;
+  box-sizing: border-box;
+}
+.model_bar_list{
+  width: 74rpx;
+  height: 88rpx;
+  background: #fff;
+  line-height: 88rpx;
+  text-align: center;
+  margin-top: 24rpx;
+  border-radius: 3px;
+  margin-right: 24rpx;
+}
+.model_bar_kuai{
+  width: 158rpx;
+  height: 62rpx;
+  background: #fff;
+  line-height: 62rpx;
+  text-align: center;
+  margin-top: 24rpx;
+  border-radius: 3px;
+  margin-right: 20rpx;
+}
+.active{
+  background: #17A1E6;
+  color: #fff;
 }

@@ -1,0 +1,41 @@
+/* pages/index/mydingdan/mydingdan.wxss */
+.content{
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.dindganlist{
+  background: #fff;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  color: #464646;
+  line-height: 45rpx;
+  box-shadow: 0 0rpx 8rpx 4rpx #EBEBEB;
+  margin-bottom: 30rpx;
+}
+.dingdanlist_icon{
+  width: 40rpx;
+  text-align: center;
+  color: #9A9A9A;
+}
+.zhifu{
+  height: 78rpx;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
+.zhifu view{
+  width: 228rpx;
+  text-align: center;
+  border-radius: 24rpx;
+  line-height: 52rpx;
+}
+.li{
+  padding: 8rpx 15rpx;
+}
+.qu{
+  border: 1px solid #ECECEC;
+  color: #999;
+}
+.now{
+  background: #17A1E6;
+  color: #fff;
+}

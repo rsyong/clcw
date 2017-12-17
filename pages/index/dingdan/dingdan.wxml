@@ -1,0 +1,10 @@
+<!--pages/index/dingdan/dingdan.wxml-->
+<view class='icon'>
+ <icon type="success" size="100" color="#17A1E6"/>
+</view>
+<view class='success text-center'>操作成功</view>
+<view class='text-center sub mt-25'>
+正在为你派单，请耐心等待！
+</view>
+<button class='btn' style='background:#17A1E6;'>查看订单</button>
+<button class='btn' style='margin-top:30rpx;'>取消订单</button>

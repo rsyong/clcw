@@ -1,0 +1,76 @@
+/* pages/index/dingdanDetile/dingdanDetile.wxss */
+.content{
+  padding: 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.dingdan{
+  padding: 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 0rpx 8rpx 4rpx #EBEBEB;
+}
+.top{
+  height: 64rpx;
+  border-bottom: 1px solid #17A1E6;
+}
+.li{
+  margin-top: 20rpx;
+  color: #4C4C4C;
+}
+.dingdanlist_icon{
+  width: 40rpx;
+  text-align: center;
+  color: #9A9A9A;
+}
+.zhifu{
+  height: 78rpx;
+  margin-top: 26rpx;
+}
+.zhifu view{
+  width: 228rpx;
+  text-align: center;
+  border-radius: 24rpx;
+  line-height: 52rpx;
+}
+.qu{
+  border: 1px solid #ECECEC;
+  color: #999;
+}
+.now{
+  background: #17A1E6;
+  color: #fff;
+}
+.bott{
+  margin-top: 46rpx;
+}
+.xian{
+  width: 1px;
+  border-left: 1px solid #ccc;
+  margin-left: 14rpx;
+}
+.dd{
+  height: 116rpx;
+  margin-left: 20rpx;
+  position: relative;
+}
+.fuwu{
+  margin-top: 10rpx;
+}
+.qian{
+  width: 138rpx;
+}
+.xi{
+  width: 150rpx;
+  height: 48rpx;
+  text-align: center;
+  border-radius: 45rpx;
+  border: 1px solid #89CEF0;
+  line-height: 45rpx;
+  margin-top: -10rpx;
+}
+.icons{
+  position: absolute;
+  left: -32rpx;
+  top: 10rpx;
+}

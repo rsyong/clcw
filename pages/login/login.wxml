@@ -5,19 +5,19 @@
     <view class='flex login_list align-items-cnter'>
       <view class='login_icon'>1</view>
       <view class='flex1'>
-        <input type='number' placeholder='请输入手机号码'></input>
+        <input type='number' placeholder='请输入手机号码' bindinput='tels'></input>
       </view>
       <view class='login_icon'>x</view>
     </view>
     <view class='flex login_list align-items-cnter' style='padding-right:20rpx;'>
       <view class='login_icon'>1</view>
       <view class='flex1'>
-        <input type='number' placeholder='请输入验证码'></input>
+        <input type='number' placeholder='请输入验证码' bindinput='clode'></input>
       </view>
       <view><button class='code' bindtap='code'>{{code}}</button></view>
     </view>
   </view>
-  <button class='btn' bindtap='upData' style='background:{{back}}'>提交订单</button>
+  <button class='btn' bindtap='login' style='background:{{back}}'>提交订单</button>
   <view class='kefu'>
     <navigator class='color-hui'>联系客服</navigator>
   </view>

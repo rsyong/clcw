@@ -8,3 +8,15 @@ button::after{
   font-size: 30rpx;
   margin-top: 30rpx;
 }
+.cay_list{
+  margin-left: 2%;
+  margin-right: 2%;
+  background: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 56rpx;
+  margin-top: 30rpx;
+  border-radius: 5px;
+  padding: 20rpx 0;
+  box-shadow: 0 0rpx 8rpx 4rpx #EBEBEB;
+}

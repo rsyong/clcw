@@ -1,14 +1,38 @@
 //app.js
+
 App({
+  globalData: {
+    appid: 'wx3788b5343edda755',//appid需自己提供，此处的appid我随机编写  
+    secret: '2271f80fc254e3fcc113a69277b42b6b',//secret需自己提供，此处的secret我随机编写  
+    
+  },  
   onLaunch: function () {
     // 展示本地存储能力
+    var that = this;
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
     // 登录
     wx.login({
-      success: res => {
+      success: function(res) {
+        if(res.code){
+          var appid = 'wx3788b5343edda755'; //填写微信小程序appid  
+          var secret = '2271f80fc254e3fcc113a69277b42b6b'; //填写微信小程序secret 
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=‘+<code></code>appid+’&secret=‘+secret+’&grant_type=authorization_code&js_code=' + res.code,
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              wx.setStorage({
+                key: "openid",
+                data: res.data.openid
+              })
+              console.log(333,JSON.stringify(res)) //获取openid  
+            }
+          })  
+        }
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -34,6 +58,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    plickHttp: 'https://0qvzawca.qcloud.la/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&m=zh_jd&a=wxapp&do='
   }
 })

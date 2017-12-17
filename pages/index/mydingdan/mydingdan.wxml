@@ -1,0 +1,47 @@
+<!--pages/index/mydingdan/mydingdan.wxml-->
+<view class='content'>
+  <view class='dindganlist' bindtap='goTo'>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>全车深度精洗</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>厦门市湖里区</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>闽A131345 日产 奇俊 黑色</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>11-23 16:00</view>
+    </view>
+    <view class='flex zhifu align-items-cnter just-conten-around'>
+      <view class='qu'>取消订单</view>
+      <view class='now'>马上支付</view>
+    </view>
+  </view>
+  <view class='dindganlist'>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>全车深度精洗</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>厦门市湖里区</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>闽A131345 日产 奇俊 黑色</view>
+    </view>
+    <view class='flex li'>
+      <view class='dingdanlist_icon'>1</view>
+      <view>11-23 16:00</view>
+    </view>
+    <view class='flex zhifu align-items-cnter just-conten-around text-center'>
+      <view class='qu'>取消订单</view>
+      <view class='now'>马上支付</view>
+    </view>
+  </view>
+</view>

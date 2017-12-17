@@ -1,0 +1,12 @@
+/* pages/index/dingdan/dingdan.wxss */
+.icon{
+  text-align: center;
+  margin-top: 100rpx;
+}
+.success{
+  margin-top: 60rpx;
+}
+.sub{
+  font-size: 24rpx;
+  color: #A1A1A1;
+}

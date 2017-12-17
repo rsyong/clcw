@@ -26,3 +26,104 @@
 }
 
 navigator{font-size: 12px;}
+.shijian{
+  width: 266rpx;
+}
+.shijian text{
+  width: 100rpx;
+  margin: 10rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 100rpx;
+  display: inline-block;
+}
+.now{
+  border: 1px solid #eee;
+  color: #D1D1D1;
+}
+.yuyue{
+  background: #17A1E6;
+  color: #fff;
+}
+.jiaqian{
+  height: 200rpx;
+  text-align: center;
+}
+.monye{
+  font-size: 64rpx;
+}
+.monyeall{
+  padding-top: 70rpx;
+  color: #FF3333;
+}
+.yuanjia{
+  justify-content: flex-end;
+  font-size: 26rpx;
+  padding-right: 30rpx;
+}
+.kk{
+ margin-bottom: 30rpx;
+}
+.model{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.left{
+  width: 555rpx;
+  height: 100%;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.left_top{
+  height: 240rpx;
+  background: #1EA5E8;
+  text-align: center;
+}
+.left_top image{
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 50%;
+  margin-top: 106rpx;
+  position: relative;
+  z-index: 3;
+}
+.left_center{
+  position: absolute;
+  top: 190rpx;
+  width: 120%;
+  height: 150rpx;
+  margin-left: -10%;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+.left_bottom{
+  position: relative;
+  z-index: 3;
+  padding-top: 50rpx;
+}
+.yue{
+  font-size: 20rpx;
+  margin-top: 20rpx;
+}
+.mylist{
+  margin-top: 86rpx;
+  padding-left: 30rpx;
+}
+.mylist_icon{
+  width: 72rpx;
+  text-align: center;
+}
+.mylist_s{
+margin-bottom: 70rpx;
+color: #535353;
+font-size: 34rpx;
+}

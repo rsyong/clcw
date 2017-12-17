@@ -1,5 +1,5 @@
 <view class="container">
-  <view class='flex user_img align-items-cnter mt-25'>
+  <view class='flex user_img align-items-cnter mt-25' bindtap='showUser'>
     <image src='{{user_img}}'></image>
   </view>
   <view class='flex mt-25 just-conten-center'>专业服务专业洗车</view>
@@ -20,12 +20,61 @@
       <view class='fuwu_list_logo text-center color-hui'>3</view>
       <view class='flex1 color-hui' bindtap='choos'>请选择车辆</view>
     </view>
+    <view class='fuwu_list flex align-items-cnter'>
+      <view class='fuwu_list_logo text-center color-hui'>4</view>
+      <picker mode = "multiSelector" range="{{multiArrayXiche}}" value="{{multiIndexXiche}}" bindchange="bindMultiPickerChangeXiche" bindcolumnchange="bindMultiPickerColumnChange"  class='flex1 color-hui'>
+      {{multiArrayXiche[0][multiIndexXiche[0]]}} - {{multiArrayXiche[1][multiIndexXiche[1]]}}
+      </picker>
+      <view class='shijian'>
+        <text class='now'>现在</text>
+        <text class='yuyue'>预约</text>
+      </view>
+    </view>
+    <view class='fuwu_list flex align-items-cnter'>
+      <view class='fuwu_list_logo text-center color-hui'>5</view>
+      <view class='flex1 color-hui'>选择优惠券</view>
+    </view>
+    <view class='jiaqian'>
+      <view  class='monyeall'><text class='monye'>70.00</text>元</view>
+      <view class='flex yuanjia'>原价：<text style='color:#FF3333;'>￥70.00</text></view>
+    </view>
   </view>
   <button class='btn' bindtap='upData' style='background:{{back}}'>提交订单</button>
   <view class='flex just-conten-center mt-25'>
     <navigator class='color-hui'>优惠活动介绍</navigator>
   </view>
-  <view class='kefu'>
+  <view class='text-center mt-25 kk'>
     <navigator class='color-hui'>联系客服</navigator>
+  </view>
+  <view class='model' wx:if="{{model}}" catchtap='closeModel'>
+    <view class='left'>
+      <view class='left_top'>
+        <image src='{{user_img}}'></image>
+      </view>
+      <view class='left_center'></view>
+      <view class='left_bottom'>
+        <view class='text-center'>135****4610
+          <view class='yue'>余额：00元</view>
+        </view>
+        <view class='mylist'>
+          <navigator url='mydingdan/mydingdan' class='flex mylist_s'>
+            <view class='mylist_icon'>1</view>
+            <view>我的订单</view>
+          </navigator>
+          <navigator class='flex mylist_s'>
+            <view class='mylist_icon'>1</view>
+            <view>优惠券</view>
+          </navigator>
+          <navigator class='flex mylist_s'>
+            <view class='mylist_icon'>1</view>
+            <view>充值</view>
+          </navigator>
+          <navigator class='flex mylist_s'>
+            <view class='mylist_icon'>1</view>
+            <view>设置</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
