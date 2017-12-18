@@ -48,7 +48,7 @@ navigator{font-size: 12px;}
   color: #fff;
 }
 .jiaqian{
-  height: 200rpx;
+  height: 210rpx;
   text-align: center;
 }
 .monye{

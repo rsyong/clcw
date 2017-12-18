@@ -18,7 +18,7 @@
     </view>
     <view class='fuwu_list flex align-items-cnter'>
       <view class='fuwu_list_logo text-center color-hui'>3</view>
-      <view class='flex1 color-hui' bindtap='choos'>请选择车辆</view>
+      <view class='flex1 color-hui' bindtap='choos'>请选择车辆：{{app.globalData.carId}}</view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
       <view class='fuwu_list_logo text-center color-hui'>4</view>

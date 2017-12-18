@@ -59,7 +59,7 @@ button::after{
   margin-top: 50rpx;
   height: 90rpx;
   line-height: 90rpx;
-  width: 96%;
+  width: 92%;
   color: #fff;
   border: none;
   background: #E5E5E5;

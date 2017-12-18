@@ -20,16 +20,13 @@ App({
           var appid = 'wx3788b5343edda755'; //填写微信小程序appid  
           var secret = '2271f80fc254e3fcc113a69277b42b6b'; //填写微信小程序secret 
           wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=‘+<code></code>appid+’&secret=‘+secret+’&grant_type=authorization_code&js_code=' + res.code,
+            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx3788b5343edda755&secret=2271f80fc254e3fcc113a69277b42b6b&grant_type=authorization_code&js_code=' + res.code,
             header: {
               'content-type': 'application/json'
             },
             success: function (res) {
-              wx.setStorage({
-                key: "openid",
-                data: res.data.openid
-              })
-              console.log(333,JSON.stringify(res)) //获取openid  
+              that.globalData.userInfo = res.data.openid
+              console.log("获取openid",JSON.stringify(res)) //获取openid  
             }
           })  
         }
@@ -59,6 +56,13 @@ App({
   },
   globalData: {
     userInfo: null,
-    plickHttp: 'https://0qvzawca.qcloud.la/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&m=zh_jd&a=wxapp&do='
+    plickHttp: 'https://0qvzawca.qcloud.la/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&m=zh_jd&a=wxapp&do=',
+    caykins:{
+      kins:"奥迪",
+      sunKins:"A5"
+    },
+    openid:"111111111111111111",
+    carId:{},
+    orderId:'',
   }
 })

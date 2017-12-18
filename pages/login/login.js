@@ -9,21 +9,69 @@ Page({
     code:"获取验证码",
     tel:'',
     myclode:'',
-    oppid:'1111111',
   },
   tels:function(e){
+    if (e.detail.value.length > 0 && this.data.myclode > 0) {
+      this.setData({
+        back: "#17A1E6"
+      })
+    } else {
+      this.setData({
+        back: "#E5E5E5"
+      })
+    }
     this.setData({
       tel: e.detail.value
     })
   },
   clode:function(e){
+    if (e.detail.value.length > 0 && this.data.tel>0){
+      this.setData({
+        back:"#17A1E6"
+      })
+    }else{
+      this.setData({
+        back: "#E5E5E5"
+      })
+    }
     this.setData({
       myclode: e.detail.value
     })
   },
   login:function(){
     var _this=this;
-    
+    if (_this.data.tel.length!=11){
+      wx.showToast({
+        title: '请输入正确手机号码',
+      })
+      return;
+    }
+    if (_this.data.myclode.length!=4){
+      wx.showToast({
+        title: '请输入正确验证码',
+      })
+      return;
+    }
+    wx.request({
+      url: app.globalData.plickHttp + "login",
+      data:{
+        tel:_this.data.tel,
+        verufyCode: _this.data.myclode,
+        openid: app.globalData.openid
+      },
+      success:function(res){
+        if(res.data.ret==0){
+          wx.navigateTo({
+            url: '../index/index',
+          })
+        }else{
+          wx.showToast({
+            title: '登录失败',
+          })
+          return;
+        }
+      }
+    })
     console.log(this.data.tel, this.data.myclode)
   },
   code:function(){
@@ -35,24 +83,22 @@ Page({
       })
       return;
     }
-    wx.getStorage({
-      key: 'openid',
-      success: function (res) {
-        console.log(222,res.data)
-        _this.setData({
-          oppid:res.data
-        })
-      }
-    })
-    
     wx.request({
       url: app.globalData.plickHttp + "getverifycode",
       data: {
         tel: _this.data.tel,
-        openid: _this.data.oppid,
+        openid: app.globalData.openid,
       },
       success:function(res){
-        console.log(JSON.stringify(res))
+        if(res.data.ret==0){
+          wx.showToast({
+            title: '发送成功',
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+          })
+        }
       }
     })
     //n秒后再试

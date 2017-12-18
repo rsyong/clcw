@@ -1,4 +1,5 @@
 // pages/cay/cayKinds/cayKinds.js
+const app = getApp()
 Page({
 
   /**
@@ -111,6 +112,20 @@ Page({
       ints += lengs*51;
       num += ints;
     }
+    //获取车型数据
+    wx.request({
+      url: app.globalData.plickHttp + "getCarBrand",
+      success:function(res){
+        if(res.data.ret==0){
+
+        }else{
+          wx.showToast({
+            title: '数据加载失败',
+          })
+        }
+        console.log(JSON.stringify(res))
+      }
+    })
   },
   items:function(){
     this.setData({

@@ -7,19 +7,19 @@
     </view>
     <view class='flex li'>
       <view class='dingdanlist_icon'>1</view>
-      <view>全车深度精洗</view>
+      <view>{{mydata.project}}</view>
     </view>
     <view class='flex li'>
       <view class='dingdanlist_icon'>1</view>
-      <view>厦门市湖里区</view>
+      <view>{{mydata.location}}</view>
     </view>
     <view class='flex li'>
       <view class='dingdanlist_icon'>1</view>
-      <view>闽A131345 日产 奇俊 黑色</view>
+      <view>{{mydata.carInfo.carNum}} {{mydata.carInfo.carBrand}} {{mydata.carInfo.carModel}} {{mydata.carInfo.color}}</view>
     </view>
     <view class='flex li'>
       <view class='dingdanlist_icon'>1</view>
-      <view>11-23 16:00</view>
+      <view>{{mydata.time}}</view>
     </view>
   </view>
   <view class='flex zhifu align-items-cnter just-conten-around'>

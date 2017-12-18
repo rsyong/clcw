@@ -13,7 +13,7 @@ Page({
     latitude: 0,//经度
     longitude: 0,//纬度
     cay: '',//车辆信息值
-    back: '#E5E5E5',//按钮默认颜色
+    back: '#17A1E6',//按钮默认颜色
     user_img: '',//用户头像
     model:false,//我的model
   },
@@ -51,28 +51,37 @@ Page({
   },
   upData: function () {
     var _this = this;
+    if (!app.globalData.carId){
+      wx.showToast({
+        title: '请选择车辆信息',
+      })
+      return;
+    }
     //提交数据
     wx.request({
-      url: "https://0qvzawca.qcloud.la/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&a=wxapp&do=addorder&m=zh_jd",
+      url: app.globalData.plickHttp+"saveorder",
       data: {
-        project: 1,
+        project: _this.data.multiArray[0][_this.data.multiIndex[0]]+" "+ _this.data.multiArray[1][_this.data.multiIndex[1]],
+        carId: app.globalData.carId,
         latitude: _this.data.latitude,
         longitude: _this.data.longitude,
-        carNumber: "渝A360263",
+        appointTime: _this.data.multiArrayXiche[0][_this.data.multiIndexXiche[0]] + " " + _this.data.multiArrayXiche[1][_this.data.multiIndexXiche[1]],
+        coupon:'',
+        openid: app.globalData.openid,
       },
       method: "GET",
       success: function (res) {
-        wx.showModal({
-          title: '提示',
-          content: JSON.stringify(res),
-          success: function (res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
-        })
+        if (res.data.ret==0){
+          app.globalData.orderId=res.data.orderId;
+          wx.navigateTo({
+            url: 'dingdan/dingdan',
+          })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: '提交失败',
+          })
+        }
       }
     })
   },
