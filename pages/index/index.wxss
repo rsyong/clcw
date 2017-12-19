@@ -1,3 +1,4 @@
+
 .user_img{
   width: 110rpx;
   height: 80rpx;
@@ -30,10 +31,10 @@ navigator{font-size: 12px;}
   width: 266rpx;
 }
 .shijian text{
-  width: 100rpx;
+  width: 110rpx;
   margin: 10rpx;
-  height: 66rpx;
-  line-height: 66rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   text-align: center;
   font-size: 30rpx;
   border-radius: 100rpx;

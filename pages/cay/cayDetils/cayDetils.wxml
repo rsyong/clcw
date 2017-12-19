@@ -2,16 +2,16 @@
 <view class='mt-25 cay_detils'>
   <navigator url='../cayKinds/cayKinds' class='cay_detils_list flex align-items-cnter'>
     <view class='flex1'>请选择车型</view>
-    <view class='cay_icon'>></view>
+    <view class='cay_icon'><text class='iconfont icon-jiantou-copy-copy'></text></view>
   </navigator>
   <view class='cay_detils_list flex align-items-cnter'>
     <view class='flex1' bindtap='choos'>请选择车牌区域</view>
-    <view class='cay_icon'>></view>
-    <view class='flex1'><input type='number' placeholder='请输入车牌号码' bindinput='haoma'></input></view>
+    <view class='cay_icon'><text class='iconfont icon-jiantou-copy-copy'></text></view>
+    <navigator url='../cayNum/cayNum' class='flex1'>请输入车牌号码</navigator>
   </view>
   <view class='cay_detils_list flex align-items-cnter'>
     <view class='flex1' bindtap='chekColr'>请选择汽车颜色</view>
-    <view class='cay_icon'>></view>
+    <view class='cay_icon'><text class='iconfont icon-jiantou-copy-copy'></text></view>
   </view>
   <view class='model' wx:if="{{city}}">
     <view class='model_title'>
@@ -31,5 +31,5 @@
       <view wx:for="{{color}}" wx:key="index" class="model_bar_kuai {{chkColor==index?'active':''}}" bindtap='cheskCose'  data-ins='{{index}}'>{{item.text}}    </view>
     </view>
   </view>
-  <button class='btn' bindtap='suer' style='background:{{back}}'>确定</button>
+  <button class='btn' bindtap='suer'>确定</button>
 </view>

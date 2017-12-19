@@ -3,14 +3,14 @@
   <view class='flex mt-140 just-conten-center'>请先登录手机号</view>
   <view class='login mt-50'>
     <view class='flex login_list align-items-cnter'>
-      <view class='login_icon'>1</view>
+      <view class='login_icon'><text class='iconfont icon-shouji'></text></view>
       <view class='flex1'>
         <input type='number' placeholder='请输入手机号码' bindinput='tels'></input>
       </view>
-      <view class='login_icon'>x</view>
+      <view class='login_icon'><text class='iconfont icon-cha'></text></view>
     </view>
     <view class='flex login_list align-items-cnter' style='padding-right:20rpx;'>
-      <view class='login_icon'>1</view>
+      <view class='login_icon'><text class='iconfont icon-yuechi'></text></view>
       <view class='flex1'>
         <input type='number' placeholder='请输入验证码' bindinput='clode'></input>
       </view>

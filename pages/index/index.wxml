@@ -5,7 +5,7 @@
   <view class='flex mt-25 just-conten-center'>专业服务专业洗车</view>
   <view class='fuwu'>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'>1</view>
+      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-taiyang'></text></view>
       <picker mode = "multiSelector" range="{{multiArray}}" value="{{multiIndex}}" bindchange="bindMultiPickerChange" class='flex1 text-center color-hui'>
         <view class="picker">
           {{multiArray[0][multiIndex[0]]}} - {{multiArray[1][multiIndex[1]]}}
@@ -13,15 +13,15 @@
       </picker>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'>2</view>
-      <view class='flex1'><input type='text' placeholder='定位失败' value='{{adree}}'></input></view>
+      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-dingwei'></text></view>
+      <view class='flex1' bindtap='weizhi'>{{adree}}</view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'>3</view>
+      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-cheliang1'></text></view>
       <view class='flex1 color-hui' bindtap='choos'>请选择车辆：{{app.globalData.carId}}</view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'>4</view>
+      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-shijian'></text></view>
       <picker mode = "multiSelector" range="{{multiArrayXiche}}" value="{{multiIndexXiche}}" bindchange="bindMultiPickerChangeXiche" bindcolumnchange="bindMultiPickerColumnChange"  class='flex1 color-hui'>
       {{multiArrayXiche[0][multiIndexXiche[0]]}} - {{multiArrayXiche[1][multiIndexXiche[1]]}}
       </picker>
@@ -31,7 +31,7 @@
       </view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'>5</view>
+      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-youhuiquan'></text></view>
       <view class='flex1 color-hui'>选择优惠券</view>
     </view>
     <view class='jiaqian'>
@@ -58,21 +58,21 @@
         </view>
         <view class='mylist'>
           <navigator url='mydingdan/mydingdan' class='flex mylist_s'>
-            <view class='mylist_icon'>1</view>
+            <view class='mylist_icon'><text class='iconfont icon-Order'></text></view>
             <view>我的订单</view>
           </navigator>
           <navigator class='flex mylist_s'>
-            <view class='mylist_icon'>1</view>
+            <view class='mylist_icon'><text class='iconfont icon-youhuiquan'></text></view>
             <view>优惠券</view>
           </navigator>
           <navigator class='flex mylist_s'>
-            <view class='mylist_icon'>1</view>
+            <view class='mylist_icon'><text class='iconfont icon-chongzhi'></text></view>
             <view>充值</view>
           </navigator>
-          <navigator class='flex mylist_s'>
-            <view class='mylist_icon'>1</view>
+          <view class='flex mylist_s' bindtap='shezhi'>
+            <view class='mylist_icon'><text class='iconfont icon-shezhi'></text></view>
             <view>设置</view>
-          </navigator>
+          </view>
         </view>
       </view>
     </view>

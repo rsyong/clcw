@@ -3,22 +3,22 @@
   <view class='dingdan'>
     <view class='flex top just-conten-beteen'>
       <view>蓝风</view>
-      <view>电话</view>
+      <view><text class='iconfont icon-dianhua' style='color:#17A1E6;'></text></view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-fengshan-copy'></text></view>
       <view>{{mydata.project}}</view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-dingwei'></text></view>
       <view>{{mydata.location}}</view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-cheliang1'></text></view>
       <view>{{mydata.carInfo.carNum}} {{mydata.carInfo.carBrand}} {{mydata.carInfo.carModel}} {{mydata.carInfo.color}}</view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-jine'></text></view>
       <view>{{mydata.time}}</view>
     </view>
   </view>
@@ -31,6 +31,7 @@
     <view class='flex1'>
       <view class='flex1 dd'>
        <view class='flex'>
+          <!-- <text class='iconfont icon-xiangxia'></text> -->
           <icon class='icons' type="success" size="10" color='#17A1E6'/>
           <view class='qian'>提交订单</view>
           <view class='flex1'>2017564</view>

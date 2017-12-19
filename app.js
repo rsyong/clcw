@@ -58,11 +58,13 @@ App({
     userInfo: null,
     plickHttp: 'https://0qvzawca.qcloud.la/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&m=zh_jd&a=wxapp&do=',
     caykins:{
-      kins:"奥迪",
-      sunKins:"A5"
+      kins:"",
+      sunKins:""
     },
     openid:"111111111111111111",
     carId:{},
     orderId:'',
+    carNum:'',
+    s:'京',
   }
 })

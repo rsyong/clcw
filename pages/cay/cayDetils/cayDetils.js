@@ -27,6 +27,7 @@ Page({
       chk: e.target.dataset.ins,
       chkVlue: _this.data.jianchen[e.target.dataset.ins].text
     })
+    app.globalData.s = _this.data.jianchen[e.target.dataset.ins].text
   },
   
   cheskCose:function(e){
@@ -79,7 +80,7 @@ Page({
       })
       return;
     }
-    if (_this.data.haoma==''){
+    if (app.globalData.carNum==''){
       wx.showToast({
         title: '请输入车牌号码',
       })
@@ -96,7 +97,7 @@ Page({
       data:{
         carBrand: app.globalData.caykins,
         carModel: app.globalData.caykins.sunKins,
-        carNum: _this.data.chkVlue + " " + _this.data.haoma,
+        carNum: app.globalData.carNum,
         color: _this.data.chkColorVlue,
         openid: app.globalData.openid
       },

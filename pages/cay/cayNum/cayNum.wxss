@@ -1,0 +1,80 @@
+/* pages/cay/cayNum/cayNum.wxss */
+page{
+  background: #FAFAFA;
+}
+.top{
+  padding: 40rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.title{
+  margin-bottom: 40rpx;
+  color: #5B4627;
+}
+.pai view{
+  color: #fff;
+  text-align: center;
+  border-radius: 15rpx;
+  background: #fff;
+  padding: 6rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+
+.pai .wai{
+  border: 6rpx solid transparent;
+  margin-right: 15rpx;
+  
+}
+.pai .active{
+  border: 6rpx solid #577242;
+}
+.pai .wai:last-child{
+  margin-right: 0;
+}
+.pai .nei{
+  background: #22375B;
+  padding: 20rpx 0; 
+}
+.haopai{
+  margin-top: 20rpx;
+  padding: 40rpx;
+  background: #fff;
+}
+.haopai input{
+  border: 1px solid #A7A189;
+  border-radius: 5px;
+  margin-right: 10rpx;
+  height: 100rpx;
+  text-align: center;
+}
+.lst{
+  margin-right: 0;
+}
+.shuru{
+  height: 100rpx;
+}
+.dian{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #333;
+  margin-left: 35%;
+}
+.paizi{
+  border: 6rpx solid #2F4881;
+  padding: 10rpx;
+  margin-top: 80rpx;
+  border-radius: 10px;
+  text-align: center;
+}
+.paiziNum{
+  background: #2F4881;
+  padding: 20rpx 0; 
+  color: #fff;
+  border-radius: 8px;
+  font-size: 60rpx;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  font-weight: 500;
+}

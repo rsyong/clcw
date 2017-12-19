@@ -6,7 +6,7 @@ Page({
   data: {
     multiArray: [["上门服务"], ["外观微蜡洗", "全车微蜡洗", "全车深度精洗", "玻璃防雨镀膜", "手工双核蜡", "外观微蜡洗"]],//洗车服务类型
     multiArrayXiche: [["今天","明天"], ["14：00", "15：00", "16：00",]],
-    adree: "调用地理位置失败",//位置获取
+    adree: "选择地理位置",//位置获取
     multiIndex:[0,0],//选择类型初始值下标
     multiIndexXiche: [0, 0],//选择洗车时间初始值下标
     index_sub: 0,
@@ -96,6 +96,24 @@ Page({
     this.setData({
       model: false
     })
+  },
+  weizhi:function(){
+    var _this=this;
+    wx.chooseLocation({
+        success: function (res) {
+          _this.setData({
+            adree: res.name
+          })
+        },
+        fail: function (res) {
+          _this.setData({
+            adree: "调用地理位置失败"
+          })
+        }
+      })
+  },
+  shezhi:function(){
+    wx.openSetting({})
   },
   onReady: function () {
     var _this = this;

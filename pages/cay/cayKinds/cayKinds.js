@@ -114,7 +114,7 @@ Page({
     }
     //获取车型数据
     wx.request({
-      url: app.globalData.plickHttp + "getCarBrand",
+      url: app.globalData.plickHttp + "getcarbrand",
       success:function(res){
         if(res.data.ret==0){
 

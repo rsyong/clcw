@@ -2,19 +2,19 @@
 <view class='content'>
   <view class='dindganlist' wx:for="{{dingdan}}" wx:key="index" data-id='{{item.carInfo.id}}' catchtap='goTo'>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-fengshan-copy'></text></view>
       <view>{{item.project}}</view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-dingwei'></text></view>
       <view>{{item.location}}</view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-cheliang1'></text></view>
       <view>{{item.carInfo.carNum}} {{item.carInfo.carBrand}} {{item.carInfo.carModel}} {{item.carInfo.color}}</view>
     </view>
     <view class='flex li'>
-      <view class='dingdanlist_icon'>1</view>
+      <view class='dingdanlist_icon'><text class='iconfont icon-jine'></text></view>
       <view>{{item.time}}</view>
     </view>
     <view class='flex zhifu align-items-cnter just-conten-around'>
