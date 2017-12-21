@@ -9,10 +9,10 @@ Page({
     jianchen:[
        { text: '京' }, { text: '津' }, { text: '冀' }, { text: '晋' }, { text: '蒙' }, { text: '辽' }, { text: '吉' }, { text: '黑' }, { text: '沪' }, { text: '苏' }, { text: '浙' }, { text: '皖' }, { text: '闽' }, { text: '赣' }, { text: '鲁' }, { text: '豫' }, { text: '鄂' }, { text: '粤' }, { text: '桂' }, { text: '琼' }, { text: '川' }, { text: '贵' }, { text: '云' }, { text: '渝' }, { text: '藏' }, { text: '陕' }, { text: '甘' }, { text: '青' }, { text: '宁' }, { text: '新' }, { text: '港' }, { text: '澳' }, { text: '台' }
     ],
-    chk:0,//省份默认选中值
-    chkVlue:'',
-    chkColor: 0,//车辆颜色默认选中值
-    chkColorVlue:'',
+    chk:-1,//省份默认选中值
+    chkVlue:'请选择车牌区域',
+    chkColor: -1,//车辆颜色默认选中值
+    chkColorVlue:'请选择汽车颜色',
     haoma: '',
     city:false,//展示省份model
     colos:false,//展示颜色model
@@ -20,6 +20,8 @@ Page({
       { text: '黑色' }, { text: '白色' }, { text: '灰色' }, { text: '红色' }, { text: '银色' }, { text: '蓝色' }, { text: '黄色' }, { text: '绿色' }, { text: '橙色' }, { text: '米色' }, { text: '紫色' }, { text: '其他' }
     ],
     back: '#E5E5E5',//按钮默认颜色
+    cheliang:'请选择车型',
+    hao:'请输入车牌号码',
   },
   chesk:function(e){
     var _this=this;
@@ -108,6 +110,11 @@ Page({
             title: '保存成功',
           })
           app.globalData.carId = res.data.carId;
+          setTimeout(function(){
+            wx.redirectTo({
+              url: '../caylist/caylist',
+            })
+          },600)
         }
       }
       

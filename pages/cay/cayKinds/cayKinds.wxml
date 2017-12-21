@@ -1,19 +1,18 @@
 <!--pages/cay/cayKinds/cayKinds.wxml-->
-<scroll-view class='scroll' scroll-y="true" scroll-top="{{scroll}}">
-<view class='title pa-20 back_fff'>热门品牌</view>
+<scroll-view class='scroll' scroll-y="true" scroll-top="{{scroll}}" enable-back-to-top="true">
+<!-- <view class='title pa-20 back_fff'>热门品牌</view>
   <view class='hot back_fff'>
     <view class='flex flex-wrap'>
-      <!-- 热门品牌渲染 -->
-      <view class='hot_list text-center' wx:for="{{logo}}" wx:key="">
+      <view class='hot_list text-center' wx:for="{{logo}}" wx:key="" data-id='1' bindtap='ziPinPai'>
         <image src='{{item.imgs}}'></image>
         <view class='text'>{{item.title}}</view>
       </view>
     </view>
-  </view>
+  </view> -->
   <!-- items列表 -->
   <view wx:for="{{hot}}" wx:key="">
     <view class='items'>{{item.title}}</view>
-    <view class='back_fff cays flex align-items-cnter' wx:for="{{item.list}}" wx:key="" bindtap='items'>
+    <view class='back_fff cays flex align-items-cnter' wx:for="{{item.list}}" data-xing='{{item.text}}'  data-id='{{item.id}}' wx:key="" bindtap='items'>
       <view class='imgs'><image src='{{item.imgs}}'></image></view>
       <text class='cays_text'>{{item.text}}</text>
     </view>
@@ -26,10 +25,10 @@
   <!-- right items -->
   <view class='model' wx:if="{{isShow}}" catchtap='close'>
     <scroll-view class='list_show' scroll-y="true">
-      <view class='right_title'>东方日产</view>
-      <view class='flex right_list align-items-cnter' wx:for="{{rightList}}"  wx:key="" catchtap='chesk'>
-        <image src='{{item.imgs}}'></image>
-        <text class='right_text'>{{item.text}}</text>
+      <view class='right_title'>选择车型</view>
+      <view class='flex right_list align-items-cnter' wx:for="{{rightList}}" data-xing='{{item.fullname}}' wx:key="" catchtap='chesk'>
+        <image src='{{item.logo}}'></image>
+        <text class='right_text'>{{item.fullname}}</text>
       </view>
     </scroll-view>
   </view>

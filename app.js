@@ -62,7 +62,7 @@ App({
       sunKins:""
     },
     openid:"111111111111111111",
-    carId:{},
+    carId:'',
     orderId:'',
     carNum:'',
     s:'京',

@@ -16,6 +16,7 @@ Page({
     back: '#17A1E6',//按钮默认颜色
     user_img: '',//用户头像
     model:false,//我的model
+    carId:'',
   },
   //选择服务项目
   bindMultiPickerChange: function (e) {
@@ -118,6 +119,9 @@ Page({
   onReady: function () {
     var _this = this;
     //获取经纬度
+    _this.setData({
+      carId: app.globalData.carId
+    })
     wx.getLocation({
       success: function (res) {
         _this.setData({
@@ -132,6 +136,15 @@ Page({
         _this.setData({
           user_img: res.userInfo.avatarUrl
         })
+      }
+    })
+    wx.request({
+      url: app.globalData.plickHttp + "getcoupon",
+      data:{
+        openid: app.globalData.openid,
+      },
+      success:function(res){
+        console.log(JSON.stringify(res))
       }
     })
     // if (_this.data.adree =="调用地理位置失败"){

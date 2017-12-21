@@ -87,6 +87,12 @@ Page({
       return;
     }
     app.globalData.carNum = this.data.value0 + this.data.value1 + this.data.value2 + this.data.value3 + this.data.value4 + this.data.value5 + this.data.value6;
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];
+    prevPage.setData({
+      hao: app.globalData.carNum
+    })
     wx.showToast({
       title: '添加成功',
     })

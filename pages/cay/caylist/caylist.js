@@ -9,7 +9,7 @@ Page({
     caysList:'',
   },
   addCay:function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../cayDetils/cayDetils',
     })
   },
@@ -19,11 +19,19 @@ Page({
     wx.showToast({
       title: '选择成功',
     })
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];  //当前页面
+    var prevPage = pages[pages.length - 2]; //上一个页面
+
+    //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+    prevPage.setData({
+      carId: app.globalData.carId
+    })
     setTimeout(function () {
       wx.navigateBack({
         delta: 1
       })
-    }, 1000)
+    }, 600)
     
   },
   onReady:function(){
