@@ -15,10 +15,8 @@ Page({
   },
   zhifu:function(e){
     var _this=this;
-    var date=new Date();
-    var times=date.getTime()
     wx.requestPayment({
-      timeStamp: times,
+      timeStamp: "",
       nonceStr: '',
       package: '',
       signType: '',

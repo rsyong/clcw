@@ -19,7 +19,7 @@
     </view>
     <view class='flex zhifu align-items-cnter just-conten-around'>
       <view class='qu' data-id='{{item.carInfo.id}}' catchtap='quxiao'>取消订单</view>
-      <view class='now' catchtap='zhifu'>马上支付</view>
+      <view class='now' data-id='{{item.carInfo.id}}' catchtap='zhifu'>马上支付</view>
     </view>
   </view>
 </view>

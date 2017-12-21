@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     multiArray: [["上门服务"], ["外观微蜡洗", "全车微蜡洗", "全车深度精洗", "玻璃防雨镀膜", "手工双核蜡", "外观微蜡洗"]],//洗车服务类型
-    multiArrayXiche: [["今天","明天"], ["14：00", "15：00", "16：00",]],
+    multiArrayXiche: [["2017-12-21","2107-12-22","2017-12-23"], ["14：00", "15：00", "16：00",]],
     adree: "选择地理位置",//位置获取
     multiIndex:[0,0],//选择类型初始值下标
     multiIndexXiche: [0, 0],//选择洗车时间初始值下标
@@ -17,6 +17,7 @@ Page({
     user_img: '',//用户头像
     model:false,//我的model
     carId:'',
+    phone:'135****0000'
   },
   //选择服务项目
   bindMultiPickerChange: function (e) {
@@ -59,6 +60,9 @@ Page({
       return;
     }
     //提交数据
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: app.globalData.plickHttp+"saveorder",
       data: {
@@ -72,6 +76,7 @@ Page({
       },
       method: "GET",
       success: function (res) {
+        wx.hideLoading();
         if (res.data.ret==0){
           app.globalData.orderId=res.data.orderId;
           wx.navigateTo({
@@ -116,8 +121,13 @@ Page({
   shezhi:function(){
     wx.openSetting({})
   },
-  onReady: function () {
+  onLoad: function (option) {
     var _this = this;
+    if (option.phone){
+      _this.setData({
+        phone: option.phone
+      })
+    }
     //获取经纬度
     _this.setData({
       carId: app.globalData.carId

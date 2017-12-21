@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.0",
-	"appid": "wxf8acd01aab58457b",
+	"appid": "wx3788b5343edda755",
 	"projectname": "clcw",
 	"condition": {
 		"search": {

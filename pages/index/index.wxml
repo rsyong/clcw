@@ -53,7 +53,7 @@
       </view>
       <view class='left_center'></view>
       <view class='left_bottom'>
-        <view class='text-center'>135****4610
+        <view class='text-center'>{{phone}}
           <view class='yue'>余额：00元</view>
         </view>
         <view class='mylist'>

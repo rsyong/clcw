@@ -76,19 +76,19 @@ Page({
       })
       return;
     }
-    if (_this.data.chkVlue==''){
+    if (_this.data.chkVlue =='请选择车牌区域'){
       wx.showToast({
         title: '请选择车牌区域',
       })
       return;
     }
-    if (app.globalData.carNum==''){
+    if (app.globalData.carNum =='请输入车牌号码'){
       wx.showToast({
         title: '请输入车牌号码',
       })
       return;
     }
-    if (_this.data.chkColorVlue=''){
+    if (_this.data.chkColorVlue =='请选择汽车颜色'){
       wx.showToast({
         title: '请选择汽车颜色',
       })

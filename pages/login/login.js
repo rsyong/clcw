@@ -62,7 +62,7 @@ Page({
       success:function(res){
         if(res.data.ret==0){
           wx.navigateTo({
-            url: '../index/index',
+            url: '../index/index?phone=' + _this.data.tel,
           })
         }else{
           wx.showToast({

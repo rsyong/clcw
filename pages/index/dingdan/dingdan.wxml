@@ -7,4 +7,3 @@
 正在为你派单，请耐心等待！
 </view>
 <button class='btn' style='background:#17A1E6;' bindtap='chakan'>查看订单</button>
-<button class='btn' style='margin-top:30rpx;'>取消订单</button>

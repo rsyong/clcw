@@ -17,18 +17,28 @@ App({
     wx.login({
       success: function(res) {
         if(res.code){
-          var appid = 'wx3788b5343edda755'; //填写微信小程序appid  
-          var secret = '2271f80fc254e3fcc113a69277b42b6b'; //填写微信小程序secret 
           wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx3788b5343edda755&secret=2271f80fc254e3fcc113a69277b42b6b&grant_type=authorization_code&js_code=' + res.code,
-            header: {
-              'content-type': 'application/json'
+            url: that.globalData.plickHttp +"openid" ,
+            data:{
+              code: res.code
             },
-            success: function (res) {
-              that.globalData.userInfo = res.data.openid
-              console.log("获取openid",JSON.stringify(res)) //获取openid  
+            success:function(res){
+              that.globalData.openid = res.data.openid
+              console.log(222,res.data.openid)
             }
-          })  
+          })
+          // var appid = 'wx3788b5343edda755'; //填写微信小程序appid  
+          // var secret = '2271f80fc254e3fcc113a69277b42b6b'; //填写微信小程序secret 
+          // wx.request({
+          //   url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx3788b5343edda755&secret=2271f80fc254e3fcc113a69277b42b6b&grant_type=authorization_code&js_code=' + res.code,
+          //   header: {
+          //     'content-type': 'application/json'
+          //   },
+          //   success: function (res) {
+          //     that.globalData.userInfo = res.data.openid
+          //     console.log("获取openid",JSON.stringify(res)) //获取openid  
+          //   }
+          // })  
         }
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
@@ -61,7 +71,7 @@ App({
       kins:"",
       sunKins:""
     },
-    openid:"111111111111111111",
+    openid:"",
     carId:'',
     orderId:'',
     carNum:'',
