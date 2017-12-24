@@ -97,7 +97,7 @@ Page({
     wx.request({
       url: app.globalData.plickHttp + "savecarinfo",
       data:{
-        carBrand: app.globalData.caykins,
+        carBrand: app.globalData.caykins.kins,
         carModel: app.globalData.caykins.sunKins,
         carNum: app.globalData.carNum,
         color: _this.data.chkColorVlue,

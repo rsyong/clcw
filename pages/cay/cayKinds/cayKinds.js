@@ -87,6 +87,7 @@ Page({
       title: '加载中.',
     })
     app.globalData.caykins.kins = e.currentTarget.dataset.xing;
+    app.globalData.caykins.sunKins = e.currentTarget.dataset.xing;
     _this.setData({
       isShow: true,
       zi: e.currentTarget.dataset.id
@@ -127,13 +128,14 @@ Page({
   },
   chesk:function(e){
     var cx = e.currentTarget.dataset.xing;
+    app.globalData.caykins.sunKins = cx;
     wx.showToast({
       title: '选择成功',
     })
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2];
     prevPage.setData({
-      cheliang: "车型为：" + cx+" "+ app.globalData.caykins.kins
+      cheliang: "车型为：" + app.globalData.caykins.kins + " " + cx
     })
     setTimeout(function(){
       wx.navigateBack({

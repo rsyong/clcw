@@ -15,13 +15,31 @@ Page({
   },
   zhifu:function(e){
     var _this=this;
-    wx.requestPayment({
-      timeStamp: "",
-      nonceStr: '',
-      package: '',
-      signType: '',
-      paySign: '',
+    wx.request({
+      url: app.globalData.plickHttp +"pay",
+      data:{
+        bookingNo: "1231464313",  /*订单号*/
+        total_fee: "70",   /*订单金额*/
+        openid: app.globalData.openid
+      },
+      success:function(res){
+        console.log(JSON.stringify(res))
+        wx.requestPayment({
+          timeStamp: res.data.timeStamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          success:function(res){
+            console.log("支付成功"+JSON.stringify(res))
+          },
+          fail:function(res){
+            console.log("支付失败" + JSON.stringify(res))
+          }
+        })
+      }
     })
+    
   },
   quxiao:function(e){
     var _this = this;

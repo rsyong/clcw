@@ -1,11 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var riqi = [""];
+var shjjian = [""];
+var cun=[];
 Page({
   data: {
     multiArray: [["上门服务"], ["外观微蜡洗", "全车微蜡洗", "全车深度精洗", "玻璃防雨镀膜", "手工双核蜡", "外观微蜡洗"]],//洗车服务类型
-    multiArrayXiche: [["2017-12-21","2107-12-22","2017-12-23"], ["14：00", "15：00", "16：00",]],
+    multiArrayXiche: [riqi, shjjian ],
     adree: "选择地理位置",//位置获取
     multiIndex:[0,0],//选择类型初始值下标
     multiIndexXiche: [0, 0],//选择洗车时间初始值下标
@@ -36,14 +38,17 @@ Page({
     var _this=this;
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var data = _this.data.multiArrayXiche;
-    switch (e.detail.column){
-      case 0:
-        data[1]=["00:00","01:00","02:00"]
-        _this.setData({
-          multiArrayXiche:data
-        })
-        
-      break;
+    if (e.detail.column == 0 && e.detail.value>0){
+      data[1] = ["0:00", "1:00", "2:00", "3:00", "4:00" , "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00",
+        "13:00", "14:00", "15:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
+      _this.setData({
+        multiArrayXiche: data
+      })
+    } else if (e.detail.column == 0 && e.detail.value ==0){
+      data[1] = cun;
+      _this.setData({
+        multiArrayXiche: data
+      })
     }
   },
   choos:function(){
@@ -57,7 +62,7 @@ Page({
       wx.showToast({
         title: '请选择车辆信息',
       })
-      return;
+      // return;
     }
     //提交数据
     wx.showLoading({
@@ -156,6 +161,28 @@ Page({
       success:function(res){
         console.log(JSON.stringify(res))
       }
+    })
+    //今天的时间
+    var day2 = new Date();
+    day2.setTime(day2.getTime());
+   var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
+    //明天的时间
+    var day3 = new Date();
+    day3.setTime(day3.getTime() + 24 * 60 * 60 * 1000);
+    var s3 = day3.getFullYear() + "-" + (day3.getMonth() + 1) + "-" + day3.getDate();
+    //后天的时间
+    var day4 = new Date();
+    day4.setTime(day4.getTime() + 24 * 60 * 60 * 1000*2);
+    var s4 = day4.getFullYear() + "-" + (day4.getMonth() + 1) + "-" + day4.getDate();
+    console.log(s2, s3,s4)
+    riqi = [s2, s3, s4];
+    var j=0;
+    for (var i = day2.getHours();i<24;i++){
+      shjjian[j] = day2.getHours() + (j++) +":00";
+    }
+    cun = shjjian;
+    _this.setData({
+      multiArrayXiche: [riqi, shjjian]
     })
     // if (_this.data.adree =="调用地理位置失败"){
     //   wx.chooseLocation({

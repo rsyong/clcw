@@ -32,7 +32,18 @@ Page({
     }
   },
   input1:function(e){
+    var reg=/^[a-z|A-Z]{1}$/
     if (e.detail.value.length>0){
+      if (!reg.test(e.detail.value)){
+        this.setData({
+          shi2: false,
+          value1: ''
+        })
+        wx.showToast({
+          title: '只能输入英文',
+        })
+        return;
+      }
       this.setData({
         shi2:true,
         value1: e.detail.value
@@ -91,7 +102,8 @@ Page({
     var currPage = pages[pages.length - 1];   //当前页面
     var prevPage = pages[pages.length - 2];
     prevPage.setData({
-      hao: app.globalData.carNum
+      hao: app.globalData.carNum,
+      chkVlue: this.data.value0
     })
     wx.showToast({
       title: '添加成功',
