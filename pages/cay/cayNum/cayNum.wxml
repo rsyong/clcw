@@ -22,11 +22,11 @@
     <view class='flex1'><input maxlength='1' value='{{value0}}' bindinput='input0'></input></view>
     <view class='flex1'><input maxlength='1' value='{{value1}}' bindinput='input1' focus='{{shi1}}'></input></view>
     <view class='flex1'><view class='dian'></view></view>
-    <view class='flex1'><input maxlength='1' bindinput='input2' focus='{{shi2}}'></input></view>
-    <view class='flex1'><input maxlength='1' bindinput='input3' focus='{{shi3}}'></input></view>
-    <view class='flex1'><input maxlength='1' bindinput='input4' focus='{{shi4}}'></input></view>
-    <view class='flex1'><input maxlength='1' bindinput='input5' focus='{{shi5}}'></input></view>
-    <view class='flex1'><input maxlength='1' class='lst'  bindinput='input6' focus='{{shi6}}'></input></view>
+    <view class='flex1'><input maxlength='1' value='{{value2}}' bindinput='input2' focus='{{shi2}}'></input></view>
+    <view class='flex1'><input maxlength='1' value='{{value3}}' bindinput='input3' focus='{{shi3}}'></input></view>
+    <view class='flex1'><input maxlength='1' value='{{value4}}' bindinput='input4' focus='{{shi4}}'></input></view>
+    <view class='flex1'><input maxlength='1' value='{{value5}}' bindinput='input5' focus='{{shi5}}'></input></view>
+    <view class='flex1'><input maxlength='1' value='{{value6}}' class='lst'  bindinput='input6' focus='{{shi6}}'></input></view>
   </view>
   <view class='paizi' style='border-color: {{back}};'>
    <view class='paiziNum' style='background:{{back}};'>

@@ -28,6 +28,7 @@ Page({
     prevPage.setData({
       carId: app.globalData.carId,
       ids:carId2,
+      xuanZe:''
     })
     setTimeout(function () {
       wx.navigateBack({

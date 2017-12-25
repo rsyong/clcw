@@ -9,6 +9,7 @@ Page({
     code:"获取验证码",
     tel:'',
     myclode:'',
+    back:'#E5E5E5'
   },
   tels:function(e){
     if (e.detail.value.length > 0 && this.data.myclode > 0) {
@@ -61,8 +62,9 @@ Page({
       },
       success:function(res){
         if(res.data.ret==0){
-          wx.navigateTo({
-            url: '../index/index?phone=' + _this.data.tel,
+          app.globalData.phone = _this.data.tel;
+          wx.navigateBack({
+            
           })
         }else{
           wx.showToast({

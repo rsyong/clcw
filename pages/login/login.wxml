@@ -17,7 +17,7 @@
       <view><button class='code' bindtap='code'>{{code}}</button></view>
     </view>
   </view>
-  <button class='btn' bindtap='login' style='background:{{back}}'>提交订单</button>
+  <button class='btn' bindtap='login' style='background:{{back}}'>登录</button>
   <view class='kefu'>
     <navigator class='color-hui'>联系客服</navigator>
   </view>

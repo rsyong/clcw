@@ -1,5 +1,6 @@
 // pages/cay/cayNum/cayNum.js
-const app = getApp()
+const app = getApp();
+var reg2 = /^[a-z|A-Z|0-9]{1}$/;
 Page({
 
   /**
@@ -52,6 +53,15 @@ Page({
   },
   input2: function (e) {
     if (e.detail.value.length > 0) {
+      if (!reg2.test(e.detail.value)) {
+        this.setData({
+          value2: ''
+        })
+        wx.showToast({
+          title: '只能输入英文',
+        })
+        return;
+      }
       this.setData({
         shi3: true,
         value2: e.detail.value
@@ -60,6 +70,15 @@ Page({
   },
   input3: function (e) {
     if (e.detail.value.length > 0) {
+      if (!reg2.test(e.detail.value)) {
+        this.setData({
+          value3: ''
+        })
+        wx.showToast({
+          title: '只能输入英文',
+        })
+        return;
+      }
       this.setData({
         shi4: true,
         value3: e.detail.value
@@ -68,6 +87,15 @@ Page({
   },
   input4: function (e) {
     if (e.detail.value.length > 0) {
+      if (!reg2.test(e.detail.value)) {
+        this.setData({
+          value4: ''
+        })
+        wx.showToast({
+          title: '只能输入英文',
+        })
+        return;
+      }
       this.setData({
         shi5: true,
         value4: e.detail.value
@@ -76,6 +104,15 @@ Page({
   },
   input5: function (e) {
     if (e.detail.value.length > 0) {
+      if (!reg2.test(e.detail.value)) {
+        this.setData({
+          value5: ''
+        })
+        wx.showToast({
+          title: '只能输入英文',
+        })
+        return;
+      }
       this.setData({
         shi6: true,
         value5: e.detail.value
@@ -84,6 +121,15 @@ Page({
   },
   input6: function (e) {
     if (e.detail.value.length > 0) {
+      if (!reg2.test(e.detail.value)) {
+        this.setData({
+          value6: ''
+        })
+        wx.showToast({
+          title: '只能输入英文',
+        })
+        return;
+      }
       this.setData({
         value6: e.detail.value
       })

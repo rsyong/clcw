@@ -5,24 +5,25 @@
   <view class='flex mt-25 just-conten-center'>专业服务专业洗车</view>
   <view class='fuwu'>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-taiyang'></text></view>
-      <picker mode = "multiSelector" range="{{multiArray}}" value="{{multiIndex}}" bindchange="bindMultiPickerChange" class='flex1 text-center color-hui'>
+      <view class='fuwu_list_logo text-center'><text class='iconfont icon-taiyang'></text></view>
+      <picker mode = "multiSelector" range="{{multiArray}}" value="{{multiIndex}}" bindchange="bindMultiPickerChange" class='flex1 text-center'>
         <view class="picker">
-          {{multiArray[0][multiIndex[0]]}} - {{multiArray[1][multiIndex[1]]}}
+        <!-- {{multiArray[0][multiIndex[0]]}} -  -->
+          {{multiArray[1][multiIndex[1]]}}
         </view>
       </picker>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-dingwei'></text></view>
+      <view class='fuwu_list_logo text-center'><text class='iconfont icon-dingwei'></text></view>
       <view class='flex1' bindtap='weizhi'>{{adree}}</view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-cheliang1'></text></view>
-      <view class='flex1 color-hui' bindtap='choos'>选择车辆：{{carId}}</view>
+      <view class='fuwu_list_logo text-center'><text class='iconfont icon-cheliang1'></text></view>
+      <view class='flex1' bindtap='choos'>{{xuanZe}}{{carId}}</view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-shijian'></text></view>
-      <picker mode = "multiSelector" range="{{multiArrayXiche}}" value="{{multiIndexXiche}}" bindchange="bindMultiPickerChangeXiche" bindcolumnchange="bindMultiPickerColumnChange"  class='flex1 color-hui'>
+      <view class='fuwu_list_logo text-center'><text class='iconfont icon-shijian'></text></view>
+      <picker mode = "multiSelector" range="{{multiArrayXiche}}" value="{{multiIndexXiche}}" bindchange="bindMultiPickerChangeXiche" bindcolumnchange="bindMultiPickerColumnChange"  class='flex1'>
       {{multiArrayXiche[0][multiIndexXiche[0]]}} - {{multiArrayXiche[1][multiIndexXiche[1]]}}
       </picker>
       <view class='shijian'>
@@ -31,12 +32,18 @@
       </view>
     </view>
     <view class='fuwu_list flex align-items-cnter'>
-      <view class='fuwu_list_logo text-center color-hui'><text class='iconfont icon-youhuiquan'></text></view>
-      <view class='flex1 color-hui'>选择优惠券</view>
+      <view class='fuwu_list_logo text-center'><text class='iconfont icon-youhuiquan'></text></view>
+      <picker mode = "selector" value="{{multiIndexYH}}"  range="{{multiArrayYH}}" bindchange="bindMultiPickerChangeYH" class='flex1'>
+        <view class="picker">
+        <!-- {{multiArray[0][multiIndex[0]]}} -  -->
+          {{multiArrayYH[multiIndexYH]}}{{none}}
+        </view>
+      </picker>
+      <!-- <view class='flex1'>选择优惠券</view> -->
     </view>
     <view class='jiaqian'>
-      <view  class='monyeall'><text class='monye'>70.00</text>元</view>
-      <view class='flex yuanjia'>原价：<text style='color:#FF3333;'>￥70.00</text></view>
+      <view  class='monyeall'><text class='monye'>{{newMoney}}.00</text>元</view>
+      <view class='flex yuanjia'>原价：<text style='color:#FF3333;'>￥{{oldMoney}}.00</text></view>
     </view>
   </view>
   <button class='btn' bindtap='upData' style='background:{{back}}'>提交订单</button>
@@ -44,7 +51,7 @@
     <navigator class='color-hui'>优惠活动介绍</navigator>
   </view>
   <view class='text-center mt-25 kk'>
-    <navigator class='color-hui'>联系客服</navigator>
+    <view class='color-hui kefu2' bindtap='talk'>联系客服</view>
   </view>
   <view class='model' wx:if="{{model}}" catchtap='closeModel'>
     <view class='left'>
@@ -54,20 +61,11 @@
       <view class='left_center'></view>
       <view class='left_bottom'>
         <view class='text-center'>{{phone}}
-          <view class='yue'>余额：00元</view>
         </view>
         <view class='mylist'>
           <navigator url='mydingdan/mydingdan' class='flex mylist_s'>
             <view class='mylist_icon'><text class='iconfont icon-Order'></text></view>
             <view>我的订单</view>
-          </navigator>
-          <navigator class='flex mylist_s'>
-            <view class='mylist_icon'><text class='iconfont icon-youhuiquan'></text></view>
-            <view>优惠券</view>
-          </navigator>
-          <navigator class='flex mylist_s'>
-            <view class='mylist_icon'><text class='iconfont icon-chongzhi'></text></view>
-            <view>充值</view>
           </navigator>
           <view class='flex mylist_s' bindtap='shezhi'>
             <view class='mylist_icon'><text class='iconfont icon-shezhi'></text></view>

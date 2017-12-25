@@ -128,3 +128,6 @@ margin-bottom: 70rpx;
 color: #535353;
 font-size: 34rpx;
 }
+.kefu2{
+  font-size: 12px;
+}

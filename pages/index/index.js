@@ -4,13 +4,15 @@ const app = getApp()
 var riqi = [""];
 var shjjian = [""];
 var cun=[];
+var jiage=[];
 Page({
   data: {
-    multiArray: [["上门服务"], ["外观微蜡洗", "全车微蜡洗", "全车深度精洗", "玻璃防雨镀膜", "手工双核蜡", "外观微蜡洗"]],//洗车服务类型
+    multiArray: [["上门服务"], ["外观微蜡洗", "全车微蜡洗", "全车深度精洗", "玻璃防雨镀膜", "手工双核蜡"]],//洗车服务类型
     multiArrayXiche: [riqi, shjjian ],
     adree: "选择地理位置",//位置获取
     multiIndex:[0,0],//选择类型初始值下标
     multiIndexXiche: [0, 0],//选择洗车时间初始值下标
+    multiIndexYH: 0,//优惠券下标
     index_sub: 0,
     latitude: 0,//经度
     longitude: 0,//纬度
@@ -22,14 +24,80 @@ Page({
     phone:'135****0000',
     int:0,
     ids:'',
+    newMoney:'15',
+    oldMoney:'15',
+    xuanZe:'选择车辆',
+    multiArrayYH:[],
+    none:'',
+    youhujuan:'',
+    jj:'',
+    yhuIndex:-1,
+  },
+  bindMultiPickerChangeYH:function(e){
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    console.log(jiage[e.detail.value[0]]) //优惠券
+
+    var rmb = this.data.oldMoney;//原价
+    if (parseFloat(jiage[e.detail.value[0]]) > parseFloat(rmb)){
+      this.setData({
+        multiIndexYH: e.detail.value,
+        newMoney: 0,
+        jj: jiage[e.detail.value[0]],
+        yhuIndex: e.detail.value[0],
+      })
+    }else{
+      this.setData({
+        multiIndexYH: e.detail.value,
+        newMoney: parseFloat(rmb)- parseFloat(jiage[e.detail.value[0]]),
+        jj: jiage[e.detail.value[0]],
+        yhuIndex: e.detail.value[0],
+      })
+    }
+    
+
   },
   //选择服务项目
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
+    var num = e.detail.value[1];
+    var myMoney=15;
+    switch (num){
+      case 0:
+        myMoney=15;
+        break;
+      case 1:
+        myMoney = 25;
+        break;
+      case 2:
+        myMoney = 55;
+        break;
+      case 3:
+        myMoney = 75;
+        break;
+      case 4:
+        myMoney = 125;
+        break;
+    }
+    
     this.setData({
       multiIndex: e.detail.value,
-      int: e.detail.value[1]
+      int: e.detail.value[1],
+      newMoney: myMoney,
+      oldMoney: myMoney,
     })
+    var jjs = this.data.jj;//优惠额
+    if (jjs==''){return;}
+    console.log(jjs, this.data.oldMoney)
+    var rmb = this.data.oldMoney;//原价
+    if (parseFloat(jjs) > parseFloat(rmb)) {
+      this.setData({
+        newMoney: 0,
+      })
+    } else {
+      this.setData({
+        newMoney: parseFloat(rmb) - parseFloat(jjs),
+      })
+    }
   },
   bindMultiPickerChangeXiche: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -42,8 +110,8 @@ Page({
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var data = _this.data.multiArrayXiche;
     if (e.detail.column == 0 && e.detail.value>0){
-      data[1] = ["0:00", "1:00", "2:00", "3:00", "4:00" , "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00",
-        "13:00", "14:00", "15:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
+      data[1] = ["9:00", "10:00", "11:00", "12:00",
+        "13:00", "14:00", "15:00", "17:00"]
       _this.setData({
         multiArrayXiche: data
       })
@@ -55,11 +123,23 @@ Page({
     }
   },
   choos:function(){
+    if (app.globalData.phone==''){
+      wx.navigateTo({
+        url: '../login/login',
+      })
+      return;
+    }
     wx.navigateTo({
       url: "../cay/caylist/caylist",
     })
   },
   upData: function () {
+    if (app.globalData.phone == '') {
+      wx.navigateTo({
+        url: '../login/login',
+      })
+      return;
+    }
     var _this = this;
     if (!app.globalData.carId){
       wx.showToast({
@@ -79,7 +159,7 @@ Page({
         latitude: _this.data.latitude,
         longitude: _this.data.longitude,
         appointTime: _this.data.multiArrayXiche[0][_this.data.multiIndexXiche[0]] + " " + _this.data.multiArrayXiche[1][_this.data.multiIndexXiche[1]],
-        coupon:'',
+        coupon: _this.data.yhuIndex,
         openid: app.globalData.openid,
       },
       method: "GET",
@@ -101,8 +181,15 @@ Page({
   },
   showUser:function(){
     //展示我的model
+    if (app.globalData.phone==''){
+      wx.navigateTo({
+        url: '../login/login',
+      })
+      return;
+    }
     this.setData({
-      model:true
+      model:true,
+      phone: app.globalData.phone
     })
   },
   closeModel:function(){
@@ -121,10 +208,16 @@ Page({
         },
         fail: function (res) {
           _this.setData({
-            adree: "调用地理位置失败"
+            adree: "选择地理位置"
           })
         }
       })
+  },
+  //联系客服电话
+  talk:function(){
+    wx.makePhoneCall({
+      phoneNumber: '1111111111',
+    })
   },
   shezhi:function(){
     wx.openSetting({})
@@ -156,12 +249,40 @@ Page({
         })
       }
     })
+    //优惠券
     wx.request({
       url: app.globalData.plickHttp + "getcoupon",
       data:{
         openid: app.globalData.openid,
       },
       success:function(res){
+        var yhj=[];
+        if (res.data.couponArr.length==0){
+          _this.setData({
+            none:'没有可用优惠券'
+          })
+          return;
+        }
+        for (var i = 0; i < res.data.couponArr.length;i++){
+          yhj.push(res.data.couponArr[i].name +"-面值："+ res.data.couponArr[i].money);
+          jiage.push(res.data.couponArr[i].money);
+        }
+        var rmb = _this.data.oldMoney;//原价
+        if (parseFloat(jiage[0]) > parseFloat(rmb)) {
+          _this.setData({
+            newMoney: 0
+          })
+        } else {
+          _this.setData({
+            newMoney: parseFloat(rmb) - parseFloat(jiage[0])
+          })
+        }
+        _this.setData({
+          multiArrayYH: yhj,
+          youhujuan: jiage[0],
+          jj: jiage[0],
+          yhuIndex:0,
+        })
         console.log(JSON.stringify(res))
       }
     })

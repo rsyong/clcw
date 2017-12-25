@@ -76,5 +76,6 @@ App({
     orderId:'',
     carNum:'',
     s:'京',
+    phone:'',
   }
 })
