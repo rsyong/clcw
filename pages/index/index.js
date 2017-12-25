@@ -19,13 +19,16 @@ Page({
     user_img: '',//用户头像
     model:false,//我的model
     carId:'',
-    phone:'135****0000'
+    phone:'135****0000',
+    int:0,
+    ids:'',
   },
   //选择服务项目
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
-      multiIndex: e.detail.value
+      multiIndex: e.detail.value,
+      int: e.detail.value[1]
     })
   },
   bindMultiPickerChangeXiche: function (e) {
@@ -71,8 +74,8 @@ Page({
     wx.request({
       url: app.globalData.plickHttp+"saveorder",
       data: {
-        project: _this.data.multiArray[0][_this.data.multiIndex[0]]+" "+ _this.data.multiArray[1][_this.data.multiIndex[1]],
-        carId: app.globalData.carId,
+        project: _this.data.int,
+        carId: _this.data.ids,
         latitude: _this.data.latitude,
         longitude: _this.data.longitude,
         appointTime: _this.data.multiArrayXiche[0][_this.data.multiIndexXiche[0]] + " " + _this.data.multiArrayXiche[1][_this.data.multiIndexXiche[1]],

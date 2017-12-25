@@ -15,6 +15,7 @@ Page({
   },
   check:function(e){
     var inde=e.currentTarget.dataset.in;
+    var carId2 = e.currentTarget.dataset.id;
     app.globalData.carId = this.data.caysList[inde].carNum + " " + this.data.caysList[inde].color + " " + this.data.caysList[inde].carBrand + " " + this.data.caysList[inde].carModel;
     wx.showToast({
       title: '选择成功',
@@ -25,7 +26,8 @@ Page({
 
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
     prevPage.setData({
-      carId: app.globalData.carId
+      carId: app.globalData.carId,
+      ids:carId2,
     })
     setTimeout(function () {
       wx.navigateBack({
