@@ -181,12 +181,12 @@ Page({
   },
   showUser:function(){
     //展示我的model
-    if (app.globalData.phone==''){
-      wx.navigateTo({
-        url: '../login/login',
-      })
-      return;
-    }
+    // if (app.globalData.phone==''){
+    //   wx.navigateTo({
+    //     url: '../login/login',
+    //   })
+    //   return;
+    // }
     this.setData({
       model:true,
       phone: app.globalData.phone

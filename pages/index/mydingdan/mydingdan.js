@@ -15,10 +15,11 @@ Page({
   },
   zhifu:function(e){
     var _this=this;
+    console.log(JSON.stringify(e))
     wx.request({
       url: app.globalData.plickHttp +"pay",
       data:{
-        bookingNo: "1231464313",  /*订单号*/
+        bookingNo: e.currentTarget.dataset.id,  /*订单号*/
         total_fee: "70",   /*订单金额*/
         openid: app.globalData.openid
       },

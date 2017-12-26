@@ -19,12 +19,17 @@
     </view>
     <view class='flex li'>
       <view class='dingdanlist_icon'><text class='iconfont icon-jine'></text></view>
-      <view>{{mydata.time}}</view>
+      <view>金额：{{mydata.money}}</view>
     </view>
   </view>
   <view class='flex zhifu align-items-cnter just-conten-around'>
-    <view class='qu'>取消订单</view>
-    <view class='now'>马上支付</view>
+    <view class='qu' wx:if="{{mydata.stat==1}}" bindtap='quxiao'>取消订单</view>
+    <view class='now'wx:if="{{mydata.stat==1}}" bindtap='zhifu'>马上支付</view>
+    <view class='qu' wx:if="{{mydata.stat==2}}">待派件</view>
+    <view class='qu' wx:if="{{mydata.stat==3}}">已派单</view>
+    <view class='qu' wx:if="{{mydata.stat==4}}">处理中</view>
+    <view class='qu' wx:if="{{mydata.stat==5}}">已完成</view>
+    <view class='qu' wx:if="{{mydata.stat==999}}">已取消</view>
   </view>
   <view class='flex bott'>
     <view class='xian'></view>
@@ -32,36 +37,36 @@
       <view class='flex1 dd'>
        <view class='flex'>
           <!-- <text class='iconfont icon-xiangxia'></text> -->
-          <icon class='icons' type="success" size="10" color='#17A1E6'/>
+          <icon wx:if="{{mydata.create_time}}" class='icons' type="success" size="10" color='#17A1E6'/>
+          <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>提交订单</view>
-          <view class='flex1'>2017564</view>
+          <view class='flex1'>{{mydata.create_time}}</view>
         </view>
       </view>
       <view class='flex1 dd'>
        <view class='flex'>
-          <icon class='icons' type="success" size="10" color='#CDCDCD'/>
+          <icon wx:if="{{mydata.appoint_time}}" class='icons' type="success" size="10" color='#17A1E6'/>
+          <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>派送服务</view>
-          <view class='flex1'>2017564</view>
+          <view class='flex1'>{{mydata.appoint_time}}</view>
         </view>
-        <view class='fuwu'>服务时间：2017</view>
+        <view class='fuwu'>服务时间：{{mydata.receive_time}}</view>
       </view>
       <view class='flex1 dd'>
         <view class='flex'>
-          <icon class='icons' type="success" size="10" color='#CDCDCD'/>
+          <icon wx:if="{{mydata.start_time}}" class='icons' type="success" size="10" color='#17A1E6'/>
+          <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>开始服务</view>
-          <view class='flex1'>2017564</view>
-          <view class='xi'>洗前照片</view>
+          <view class='flex1'>{{mydata.start_time}}</view>
         </view>
-        <view class='fuwu'>服务时间：2017</view>
       </view>
       <view class='flex1 dd'>
         <view class='flex'>
-          <icon class='icons' type="success" size="10" color='#CDCDCD'/>
+          <icon wx:if="{{mydata.end_time}}" class='icons' type="success" size="10" color='#17A1E6'/>
+          <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>完成服务</view>
-          <view class='flex1'>2017564</view>
-          <view class='xi'>洗后照片</view>
+          <view class='flex1'>{{mydata.end_time}}</view>
         </view>
-        <view class='fuwu'>服务时间：2017</view>
       </view>
     </view>
   </view>
