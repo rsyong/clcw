@@ -5,6 +5,7 @@ var riqi = [""];
 var shjjian = [""];
 var cun=[];
 var jiage=[];
+var youhuijuan=[];
 Page({
   data: {
     multiArray: [["上门服务"], ["外观微蜡洗", "全车微蜡洗", "全车深度精洗", "玻璃防雨镀膜", "手工双核蜡"]],//洗车服务类型
@@ -36,21 +37,21 @@ Page({
   bindMultiPickerChangeYH:function(e){
     console.log('picker发送选择改变，携带值为', e.detail.value);
     console.log(jiage[e.detail.value[0]]) //优惠券
-
+    
     var rmb = this.data.oldMoney;//原价
     if (parseFloat(jiage[e.detail.value[0]]) > parseFloat(rmb)){
       this.setData({
         multiIndexYH: e.detail.value,
         newMoney: 0,
         jj: jiage[e.detail.value[0]],
-        yhuIndex: e.detail.value[0],
+        yhuIndex: youhuijuan[e.detail.value[0]].id,
       })
     }else{
       this.setData({
         multiIndexYH: e.detail.value,
         newMoney: parseFloat(rmb)- parseFloat(jiage[e.detail.value[0]]),
         jj: jiage[e.detail.value[0]],
-        yhuIndex: e.detail.value[0],
+        yhuIndex: youhuijuan[e.detail.value[0]].id,
       })
     }
     
@@ -123,17 +124,18 @@ Page({
     }
   },
   choos:function(){
-    if (app.globalData.phone==''){
-      wx.navigateTo({
-        url: '../login/login',
-      })
-      return;
-    }
+    // if (app.globalData.phone==''){
+    //   wx.navigateTo({
+    //     url: '../login/login',
+    //   })
+    //   return;
+    // }
     wx.navigateTo({
       url: "../cay/caylist/caylist",
     })
   },
   upData: function () {
+    
     if (app.globalData.phone == '') {
       wx.navigateTo({
         url: '../login/login',
@@ -219,6 +221,13 @@ Page({
       phoneNumber: '1111111111',
     })
   },
+  //优惠活动介绍
+  youhui:function(){
+    wx.showModal({
+      title: '优惠活动介绍',
+      content: '暂时没有优惠活动',
+    })
+  },
   shezhi:function(){
     wx.openSetting({})
   },
@@ -250,42 +259,46 @@ Page({
       }
     })
     //优惠券
-    wx.request({
-      url: app.globalData.plickHttp + "getcoupon",
-      data:{
-        openid: app.globalData.openid,
-      },
-      success:function(res){
-        var yhj=[];
-        if (res.data.couponArr.length==0){
+    setTimeout(function(){
+      wx.request({
+        url: app.globalData.plickHttp + "getcoupon",
+        data: {
+          openid: app.globalData.openid,
+        },
+        success: function (res) {
+          var yhj = [];
+          if (res.data.couponArr.length == 0) {
+            _this.setData({
+              none: '没有可用优惠券'
+            })
+            return;
+          }
+          youhuijuan = res.data.couponArr
+          for (var i = 0; i < res.data.couponArr.length; i++) {
+            yhj.push(res.data.couponArr[i].name + "-面值：" + res.data.couponArr[i].money);
+            jiage.push(res.data.couponArr[i].money);
+          }
+          var rmb = _this.data.oldMoney;//原价
+          if (parseFloat(jiage[0]) > parseFloat(rmb)) {
+            _this.setData({
+              newMoney: 0
+            })
+          } else {
+            _this.setData({
+              newMoney: parseFloat(rmb) - parseFloat(jiage[0])
+            })
+          }
           _this.setData({
-            none:'没有可用优惠券'
+            multiArrayYH: yhj,
+            youhujuan: jiage[0],
+            jj: jiage[0],
+            yhuIndex: youhuijuan[0].id,
           })
-          return;
+          console.log(JSON.stringify(res))
         }
-        for (var i = 0; i < res.data.couponArr.length;i++){
-          yhj.push(res.data.couponArr[i].name +"-面值："+ res.data.couponArr[i].money);
-          jiage.push(res.data.couponArr[i].money);
-        }
-        var rmb = _this.data.oldMoney;//原价
-        if (parseFloat(jiage[0]) > parseFloat(rmb)) {
-          _this.setData({
-            newMoney: 0
-          })
-        } else {
-          _this.setData({
-            newMoney: parseFloat(rmb) - parseFloat(jiage[0])
-          })
-        }
-        _this.setData({
-          multiArrayYH: yhj,
-          youhujuan: jiage[0],
-          jj: jiage[0],
-          yhuIndex:0,
-        })
-        console.log(JSON.stringify(res))
-      }
-    })
+      })
+    },800)
+    
     //今天的时间
     var day2 = new Date();
     day2.setTime(day2.getTime());

@@ -1,6 +1,9 @@
 <!--pages/cay/caylist/caylist.wxml-->
-<view class='cay_list' wx:for="{{caysList}}" wx:key="index" data-id='{{item.id}}' data-in='{{index}}' bindtap='check'>
-  <view>{{item.carNum}} {{item.color}}</view>
-  <view>{{item.carBrand}} {{item.carModel}}</view>
+<view class='flex cay_list align-items-cnter' wx:for="{{caysList}}" wx:key="index" data-id='{{item.id}}' data-in='{{index}}' catchtap='check'>
+  <view class='flex1'>
+   <view>{{item.carNum}} {{item.color}}</view>
+    <view>{{item.carBrand}} {{item.carModel}}</view>
+  </view>
+  <view style='width:30px;' data-id='{{item.id}}' catchtap='delseCay'>X</view>
 </view>
 <button class='btn' bindtap='addCay'>添加车辆信息</button>

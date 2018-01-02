@@ -25,6 +25,17 @@ App({
             success:function(res){
               that.globalData.openid = res.data.openid
               console.log(222,res.data.openid)
+              wx.request({
+                url: that.globalData.plickHttp + "isuser",
+                data:{
+                  openid: that.globalData.openid
+                },
+                success:function(res){
+                  if(res.data.ret==0){
+                    that.globalData.phone = res.data.tel
+                  }
+                }
+              })
             }
           })
           // var appid = 'wx3788b5343edda755'; //填写微信小程序appid  
@@ -66,7 +77,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    plickHttp: 'https://0qvzawca.qcloud.la/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&m=zh_jd&a=wxapp&do=',
+    plickHttp: 'https://0qvzawca.qcloud.la/w7/app/index.php?i=2&t=0&v=1.0&from=wxapp&c=entry&m=zh_jd&a=wxapp&do=',
     caykins:{
       kins:"",
       sunKins:""

@@ -19,7 +19,7 @@
     </view>
     <view class='flex li'>
       <view class='dingdanlist_icon'><text class='iconfont icon-jine'></text></view>
-      <view>金额：{{mydata.money}}</view>
+      <view>金额：{{mydata.price}}</view>
     </view>
   </view>
   <view class='flex zhifu align-items-cnter just-conten-around'>
@@ -48,9 +48,9 @@
           <icon wx:if="{{mydata.appoint_time}}" class='icons' type="success" size="10" color='#17A1E6'/>
           <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>派送服务</view>
-          <view class='flex1'>{{mydata.appoint_time}}</view>
+          <view class='flex1'>{{mydata.receive_time}}</view>
         </view>
-        <view class='fuwu'>服务时间：{{mydata.receive_time}}</view>
+        <view class='fuwu'>服务时间：{{mydata.appoint_time}}</view>
       </view>
       <view class='flex1 dd'>
         <view class='flex'>
@@ -58,6 +58,7 @@
           <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>开始服务</view>
           <view class='flex1'>{{mydata.start_time}}</view>
+           <view class='xi' data-in='0' bindtap='xiqian'>洗前照片</view>
         </view>
       </view>
       <view class='flex1 dd'>
@@ -66,8 +67,20 @@
           <view wx:else><icon class='icons' type="success" size="10" color='#CDCDCD'/></view>
           <view class='qian'>完成服务</view>
           <view class='flex1'>{{mydata.end_time}}</view>
+          <view class='xi'  data-in='1'  bindtap='xiqian'>洗后照片</view>
         </view>
       </view>
     </view>
+  </view>
+</view>
+<view class='model' wx:if="{{isShow}}" catchtap='close'>
+  <view class='flex align-items-cnter just-conten-center'>
+    <swiper indicator-dots="true" autoplay="true">
+       <block wx:for="{{imgUrls}}" wx:key="">
+        <swiper-item>
+          <image src="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 </view>

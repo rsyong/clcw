@@ -1,5 +1,6 @@
 // pages/index/dingdanDetile/dingdanDetile.js
 const app = getApp()
+var id =null;
 Page({
 
   /**
@@ -8,6 +9,10 @@ Page({
   data: {
     mydata:'',
     myid:'',
+    id_str:'',
+    price:null,
+    imgUrls:[],
+    isShow:false
   },
 
   /**
@@ -40,8 +45,8 @@ Page({
     wx.request({
       url: app.globalData.plickHttp + "pay",
       data: {
-        bookingNo: _this.data.myid,  /*订单号*/
-        total_fee: "70",   /*订单金额*/
+        bookingNo: _this.data.id_str,  /*订单号*/
+        total_fee: _this.data.price,   /*订单金额*/
         openid: app.globalData.openid
       },
       success: function (res) {
@@ -63,7 +68,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    var id = options.id;
+    id = options.id;
     this.setData({ myid: id})
     var _this=this;
     wx.request({
@@ -75,11 +80,51 @@ Page({
       success:function(res){
         if(res.data.ret==0){
           _this.setData({
-            mydata:res.data.order
+            mydata:res.data.order,
+            id_str: res.data.id_str,
+            price: res.data.price
           })
         }
         console.log(JSON.stringify(res))
       }
     })
   },
+  xiqian:function(e){
+    var ins=e.currentTarget.dataset.in
+    var _this=this;
+    _this.setData({
+      isShow:true
+    })
+    wx.request({
+      url: app.globalData.plickHttp + "getpicture",
+      data:{
+        openid: app.globalData.openid,
+        id:14,
+        type: ins,
+      },
+      success:function(res){
+        console.log(JSON.stringify(res))
+        if(res.data.ret==0){
+          if (res.data.img.length==0){
+            wx.showToast({
+              title: '没有照片',
+            })
+            return;
+          }
+          _this.setData({
+            imgUrls: res.data.img
+          })
+        }else{
+          wx.showToast({
+            title: '没有照片',
+          })
+        }
+      }
+    })
+  },
+  close:function(){
+    this.setData({
+      isShow:false
+    })
+  }
 })

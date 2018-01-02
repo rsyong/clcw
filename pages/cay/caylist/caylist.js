@@ -37,6 +37,43 @@ Page({
     }, 600)
     
   },
+  delseCay:function(e){
+    var _this=this;
+    var inde = e.currentTarget.dataset.id;
+    wx.request({
+      url: app.globalData.plickHttp + "deletecar",
+      data:{
+        openid: app.globalData.openid,
+        id: inde
+      },
+      success:function(res){
+        console.log(JSON.stringify(res))
+        if(res.data.ret==0){
+          wx.showToast({
+            title: '删除成功',
+          })
+          wx.request({
+            url: app.globalData.plickHttp + "getsavedcar",
+            data: {
+              openid: app.globalData.openid
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if (res.data.ret == 0) {
+                _this.setData({
+                  caysList: res.data.carInfoArr
+                })
+              }
+            }
+          })
+        }else{
+          wx.showToast({
+            title: '删除失败',
+          })
+        }
+      }
+    })
+  },
   onReady:function(){
     var _this=this;
     wx.showLoading({

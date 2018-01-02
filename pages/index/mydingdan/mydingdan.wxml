@@ -1,6 +1,6 @@
 <!--pages/index/mydingdan/mydingdan.wxml-->
 <view class='content'>
-  <view class='dindganlist' wx:for="{{dingdan}}" wx:key="index" data-id='{{item.carInfo.id}}' catchtap='goTo'>
+  <view class='dindganlist' wx:for="{{dingdan}}" wx:key="index" data-id='{{item.id}}' catchtap='goTo'>
     <view class='flex li'>
       <view class='dingdanlist_icon'><text class='iconfont icon-fengshan-copy'></text></view>
       <view>{{item.project}}</view>
@@ -18,13 +18,13 @@
       <view>{{item.time}}</view>
     </view>
     <view class='flex zhifu align-items-cnter just-conten-around'>
-      <view class='qu' wx:if="{{item.stat==1}}" data-id='{{item.carInfo.id}}' catchtap='quxiao'>取消订单</view>
-      <view class='now'  wx:if="{{item.stat==1}}" data-id='{{item.carInfo.id}}' catchtap='zhifu'>马上支付</view>
-      <view class='qu' wx:if="{{item.stat==2}}" data-id='{{item.carInfo.id}}'>待派件</view>
-      <view class='qu' wx:if="{{item.stat==3}}" data-id='{{item.carInfo.id}}'>已派单</view>
-      <view class='qu' wx:if="{{item.stat==4}}" data-id='{{item.carInfo.id}}'>处理中</view>
-      <view class='qu' wx:if="{{item.stat==5}}" data-id='{{item.carInfo.id}}'>已完成</view>
-      <view class='qu' wx:if="{{item.stat==999}}" data-id='{{item.carInfo.id}}'>已取消</view>
+      <view class='qu' wx:if="{{item.stat==1}}" data-id='{{item.id}}' catchtap='quxiao'>取消订单</view>
+      <view class='now'  wx:if="{{item.stat==1}}" data-id='{{item.id}}'>马上支付</view>
+      <view class='qu' wx:if="{{item.stat==2}}" data-id='{{item.id}}'>待派件</view>
+      <view class='qu' wx:if="{{item.stat==3}}" data-id='{{item.id}}'>已派单</view>
+      <view class='qu' wx:if="{{item.stat==4}}" data-id='{{item.id}}'>处理中</view>
+      <view class='qu' wx:if="{{item.stat==5}}" data-id='{{item.id}}'>已完成</view>
+      <view class='qu' wx:if="{{item.stat==999}}" data-id='{{item.id}}'>已取消</view>
     </view>
   </view>
 </view>

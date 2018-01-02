@@ -68,9 +68,27 @@
   border: 1px solid #89CEF0;
   line-height: 45rpx;
   margin-top: -10rpx;
+  color: #17A1E6;
 }
 .icons{
   position: absolute;
   left: -32rpx;
   top: 10rpx;
+}
+.model{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  top:0;
+}
+swiper{
+  width: 100%;
+  height: 50%;
+}
+swiper image{
+  width: 100%;
+}
+.model .flex{
+  height: 100%;
 }

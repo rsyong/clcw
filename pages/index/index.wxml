@@ -48,7 +48,7 @@
   </view>
   <button class='btn' bindtap='upData' style='background:{{back}}'>提交订单</button>
   <view class='flex just-conten-center mt-25'>
-    <navigator class='color-hui'>优惠活动介绍</navigator>
+    <view class='color-hui kefu2' bindtap='youhui'>优惠活动介绍</view>
   </view>
   <view class='text-center mt-25 kk'>
     <view class='color-hui kefu2' bindtap='talk'>联系客服</view>
